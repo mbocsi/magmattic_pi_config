@@ -1,0 +1,12 @@
+[Unit]
+Description=Magpi Hotspot
+After=sys-subsystem-net-devices-wlx0013ef3005fd.device network-online.target
+
+[Service]
+Type=oneshot
+Restart=on-failure
+User=root
+ExecStart=/usr/local/bin/start_hotspot.sh
+
+[Install]
+WantedBy=multi-user.target

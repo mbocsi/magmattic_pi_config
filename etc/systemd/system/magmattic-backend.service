@@ -1,0 +1,12 @@
+[Unit]
+Description=Update and start Magmattic backend
+After=network-online.target
+
+[Service]
+ExecStart=/usr/local/bin/magmattic_backend.sh
+WorkingDirectory=/usr/local/bin/
+User=magmattic
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,13 @@
+[Unit]
+Description=Update Magmattic client and copy to Nginx
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/magmattic_client.sh
+WorkingDirectory=/usr/local/bin/
+User=magmattic
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
